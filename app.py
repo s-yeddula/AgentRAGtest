@@ -112,6 +112,4 @@ with gr.Blocks() as demo:
             )
 
 if __name__ == '__main__':
-    from tools import create_rag_response, analyze_rag_response, web_search
-    from agent import initialize_agent_llm, construct_agent
     demo.launch(share=True)
