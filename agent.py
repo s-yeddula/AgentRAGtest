@@ -12,7 +12,7 @@ from openinference.instrumentation.openai import OpenAIInstrumentor
 from phoenix.otel import register
 
 from rag import initialize_vector_store
-from tools import create_rag_response, analyze_rag_response, web_search
+# from tools import create_rag_response, analyze_rag_response, web_search
 from tools import initialize_tool_llm
 
 load_dotenv()
@@ -36,6 +36,7 @@ def initialize_agent_llm(model):
     """
     Initialize the agent llm, this will bind the tools to the agent llm.
     """
+    from tools import create_rag_response, analyze_rag_response, web_search
     tools = [
         create_rag_response,
         analyze_rag_response,
