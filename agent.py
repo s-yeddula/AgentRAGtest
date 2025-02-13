@@ -13,7 +13,7 @@ from phoenix.otel import register
 
 from rag import initialize_vector_store
 # from tools import create_rag_response, analyze_rag_response, web_search
-from tools import initialize_tool_llm
+#from tools import initialize_tool_llm
 
 load_dotenv()
 open_ai_llm = None
@@ -112,6 +112,7 @@ def construct_agent():
 
 
 def main():
+    from tools import initialize_tool_llm
     logger.info("RAG Agent Started....")
 
     initialize_instrumentor("agentic_rag")
