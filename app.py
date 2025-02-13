@@ -10,7 +10,7 @@ from opentelemetry.trace import Status, StatusCode
 from agent import initialize_agent_llm
 from agent import initialize_instrumentor, construct_agent
 from rag import initialize_vector_store
-from tools import initialize_tool_llm
+#from tools import initialize_tool_llm
 
 load_dotenv()
 
@@ -22,6 +22,7 @@ SYSTEM_MESSAGE_FOR_AGENT_WORKFLOW = """
 
 
 def initialize_agent(phoenix_key, project_name, openai_key, user_session_id, vector_source_web_url):
+    from tools import initialize_tool_llm
     os.environ["PHOENIX_API_KEY"] = phoenix_key
     os.environ["OPENAI_API_KEY"] = openai_key
     os.environ["PHOENIX_COLLECTOR_ENDPOINT"] = "https://app.phoenix.arize.com/v1/traces"
